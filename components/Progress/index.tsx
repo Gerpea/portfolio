@@ -5,9 +5,9 @@ type Props = React.HTMLProps<HTMLDivElement> & {
     value: number
 }
 
-const Progress: React.FC<Props> = ({ value, ...rest }) => {
+const Progress: React.FC<Props> = ({ value, className, ...rest }) => {
     return (
-        <div className={styles.progress} {...rest}><span className={styles.bar} style={{ width: `${value}%` }}></span></div>
+        <div className={`${styles.progress} ${className || ''}`} {...rest}><span className={styles.bar} style={{ width: `${value}%` }}></span></div>
     )
 }
 

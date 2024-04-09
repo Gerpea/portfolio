@@ -7,12 +7,12 @@ type Props = React.HTMLProps<HTMLSpanElement> & {
     to: Date;
 }
 
-const DateText: React.FC<Props> = ({ from, to, ...rest }) => {
+const DateText: React.FC<Props> = ({ from, to, className, ...rest }) => {
     const formatedFrom = format(from, 'MM.yyyy')
     const formatedTo = format(to, 'MM.yyyy')
 
     return (
-        <span className={styles.date} {...rest}>{formatedFrom}-{formatedTo}</span>
+        <span className={`${styles.date} ${className || ''}`} {...rest}>{formatedFrom}-{formatedTo}</span>
     )
 }
 

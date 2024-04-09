@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
 
-const Text: React.FC<PropsWithChildren> = ({ children, ...rest }) => {
+const Text: React.FC<React.HTMLProps<HTMLParagraphElement>> = ({ children,...rest }) => {
   return (
     <p {...rest}>{children}</p>
   )

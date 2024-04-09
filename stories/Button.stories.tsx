@@ -13,10 +13,10 @@ const meta = {
     onClick: fn()
   },
   argTypes: {
-    type: {
+    appear: {
       control: {
         type: 'select',
-        options: ['fill', 'underline']
+        options: ['fill', 'underline', 'icon']
       },
     },
   },
@@ -27,21 +27,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Fill: Story = {
   args: {
-    type: 'fill',
+    appear: 'fill',
     children: 'Fill button'
   },
 };
 
 export const Underline: Story = {
   args: {
-    type: 'underline',
+    appear: 'underline',
     children: 'Underline button'
   },
 };
 
 export const Icon: Story = {
   args: {
-    type: 'icon',
+    appear: 'icon',
     children: 'Icon button'
   },
 };

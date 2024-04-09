@@ -1,7 +1,7 @@
-import React, { PropsWithChildren, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import styles from './styles.module.css'
 
-type Props =  React.HTMLProps<HTMLHeadingElement> & {
+type Props = React.HTMLProps<HTMLHeadingElement> & {
     level: '1' | '2' | '3'
 }
 
@@ -17,11 +17,12 @@ const levelStyleMap = {
     '3': styles.levelThree,
 }
 
-const Header: React.FC<PropsWithChildren<Props>> = ({ children, level, ...rest }) => {
+const Header: React.FC<Props> = ({ children, level, className, ...rest }) => {
     const Component = useMemo(() => levelComponentMap[level], [level]) as keyof JSX.IntrinsicElements
 
     return (
-        <Component className={`${styles.header} ${levelStyleMap[level]}`} {...rest}>{children}</Component>
+        // @ts-ignore
+        <Component className={`${styles.header} ${levelStyleMap[level]} ${className || ''}`} {...rest}>{children}</Component>
     )
 }
 

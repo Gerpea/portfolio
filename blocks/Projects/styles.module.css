@@ -1,0 +1,7 @@
+.projects {
+    padding-bottom: 1.125rem;
+}
+
+.project + .project {
+    padding-top: 1rem;
+}

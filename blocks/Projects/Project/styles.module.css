@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.footer {
+    display: flex;
+    padding-top: 0.75rem;
+    column-gap: 0.75rem;
+}
+
+.button {
+    margin-top: -0.75rem;
+    margin-bottom: -0.75rem;
+    margin-right: -0.75rem;
+    margin-left: auto;
+}
+
+.text {
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.textCollapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    background: linear-gradient(0deg, var(--color-background) 0%, transparent 100%);;
+}
+
+.textExpanded {
+    height: auto;
+}

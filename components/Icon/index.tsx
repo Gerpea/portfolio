@@ -11,10 +11,10 @@ const iconsMap = {
 
 type Props = React.HTMLProps<SVGElement> & {
     name: keyof typeof iconsMap
-    size?: number;
+    size?: string;
 }
 
-const Icon: React.FC<Props> = ({ size=16, name, ...rest }) => {
+const Icon: React.FC<Props> = ({ size = '1rem', name, ...rest }) => {
     const IconComponent = useMemo(() => iconsMap[name], [name])
 
     return (

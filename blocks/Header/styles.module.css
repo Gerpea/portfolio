@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.iconLink {
+    padding: 0.625rem 0.75rem;
+    color: var(--color-main);
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.iconLink:visited {
+    color: var(--color-main);
+}
+
+.contactLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-main);
+    text-decoration: none;
+    margin-left: auto;
+    padding: 0.25rem 0.875rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-background);
+    background: var(--color-main);
+}
+
+.contactLink:visited {
+    color: var(--color-background);
+}

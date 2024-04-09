@@ -1,4 +1,6 @@
-import React, { useMemo } from 'react'
+"use client";
+
+import React, { useCallback, useMemo } from 'react'
 import styles from './styles.module.css'
 
 const asciiLogo = `
@@ -41,14 +43,18 @@ const asciiLogo = `
                            ...            ...                                 
                                                                                           
 `
-const Logo: React.FC = () => {
-  const characters = useMemo(() => (<>
-    {Object.values(asciiLogo).map((char) => (
-      <span className={styles.char}>{char}</span>
-    ))}
-  </>), [])
+const Logo: React.FC<React.HTMLProps<HTMLDivElement>> = ({ className, ...rest }) => {
+  const handleMouseEnter: React.MouseEventHandler<HTMLSpanElement> = useCallback((event) => {
+    event.currentTarget.classList.add(styles.char)
+  }, [])
 
-  return <div className={styles.logo}>
+  const characters = useMemo(() => (<>
+    {Object.values(asciiLogo).map((char, i) => (
+      <span key={i} onMouseEnter={handleMouseEnter}>{char}</span>
+    ))}
+  </>), [handleMouseEnter])
+
+  return <div className={`${styles.logo} ${className}`} {...rest}>
     {characters}
   </div>
 }
