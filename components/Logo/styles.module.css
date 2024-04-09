@@ -1,0 +1,34 @@
+.logo {
+    white-space: pre;
+    user-select: none;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.char {
+    animation: colorAnimationReverse 1s;
+}
+
+.char:hover {
+    animation: colorAnimation 1s forwards;
+}
+
+@keyframes colorAnimation {
+    from {
+        color: inherit;
+    }
+
+    to {
+        color: var(--color-success);
+    }
+}
+
+@keyframes colorAnimationReverse {
+    from {
+        color: var(--color-success);
+    }
+
+    to {
+        color: inherit;
+    }
+}

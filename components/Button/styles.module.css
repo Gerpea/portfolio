@@ -1,0 +1,26 @@
+.button {
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  touch-action: manipulation;
+  border: none;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.625rem 0.75rem;
+}
+
+.fill {
+  background-color: var(--color-main);
+  color: var(--color-background);
+  font-weight: bold;
+}
+
+.underline {
+  background-color: transparent;
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.icon {
+  background-color: transparent;
+}

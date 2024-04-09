@@ -1,0 +1,14 @@
+.header {
+    font-family: var(--font-main);
+    font-weight: bold;
+}
+
+.levelOne {
+    font-size: 2rem;
+}
+.levelTwo {
+    font-size: 1.5rem;
+}
+.levelThree {
+    font-size: 1.25rem;
+}

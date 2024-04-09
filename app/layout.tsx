@@ -5,13 +5,15 @@ import "./globals.css";
 const ubuntuMono = Ubuntu_Mono({
   subsets: ["latin", "cyrillic"],
   weight: ['400', '700'],
-  variable: '--main-font'
+  variable: '--font-main',
+  display: 'swap'
 });
 
 const gugi = Gugi({
   subsets: ["latin"],
   weight: '400',
-  variable: '--date-font'
+  variable: '--font-date',
+  display: 'swap'
 });
 
 
@@ -26,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={ubuntuMono.className}>{children}</body>
+    <html lang="en" className={`${ubuntuMono.variable} ${gugi.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
