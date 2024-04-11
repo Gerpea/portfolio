@@ -12,10 +12,10 @@ export default function Home() {
     <main className={styles.main}>
       <Header />
       <Skills style={{ paddingTop: '2.25rem' }} />
-      <Projects style={{ paddingTop: '0.75rem' }} />
-      <Experience style={{ paddingTop: '1.5rem' }} />
+      <Projects className={styles.projects}/>
+      <Experience className={styles.experiences} />
       <About style={{ paddingTop: '1.5rem' }} />
-      <Contact style={{ paddingTop: '1.5rem' }} id='contact' />
+      <Contact id='contact' className={styles.contacts}/>
       <Logo style={{ paddingTop: '3rem' }} className={styles.logo} />
     </main>
   );

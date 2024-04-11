@@ -36,3 +36,35 @@
 .contactLink:visited {
     color: var(--color-background);
 }
+
+.logo {
+    display: none;
+}
+
+.title {
+    padding-top: 0.75rem;
+}
+
+@media screen and (min-width: 570px) {
+    .logo {
+        display: block;
+        font-size: 0.2rem;
+        line-height: 0.2rem;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .subHeader {
+        display: flex;
+        flex-direction: column-reverse;
+        align-self: self-start;
+        gap: 0.6rem;
+    }
+
+    .title {
+        padding-top: 0;
+    }
+}

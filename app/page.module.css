@@ -11,3 +11,46 @@
   line-height: 0.3rem;
   margin-right: -1.5rem;
 }
+
+.projects {
+  padding-top: 0.75rem;
+}
+
+.experiences {
+  padding-top: 1.5rem;
+}
+
+.contacts {
+  padding-top: 1.5rem;
+}
+
+@media screen and (min-width: 570px) {
+  .main {
+    max-width: 570px;
+    margin: auto;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .main {
+    padding-top: 127px;
+    padding-bottom: 127px;
+  }
+
+  .projects {
+    padding-top: 3rem;
+  }
+
+  .experiences {
+    padding-top: 3rem;
+  }
+
+  .contacts {
+    padding-top: 3rem;
+  }
+}
+

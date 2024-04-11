@@ -27,7 +27,7 @@ const skills = [
     }
 ]
 
-const Skills: React.FC<React.HTMLProps<HTMLElement>> = (props) => {
+const Skills: React.FC<React.HTMLProps<HTMLElement>> = ({ className, ...props }) => {
     const [expanded, toggleExpand] = useToggle(false)
 
     const displayedSkills = useMemo(() => {
@@ -39,7 +39,7 @@ const Skills: React.FC<React.HTMLProps<HTMLElement>> = (props) => {
     }, [expanded])
 
     return (
-        <section {...props}>
+        <section className={`${styles.container} ${className}`} {...props}>
             <Header level='2' className={styles.header}>Skills</Header>
             <div className={styles.skills}>
                 <div className={styles.skillNames}>
@@ -52,6 +52,14 @@ const Skills: React.FC<React.HTMLProps<HTMLElement>> = (props) => {
                         <Progress key={skill.name} value={skill.value} className={styles.skillValue} />
                     ))}
                 </div>
+            </div>
+            <div className={styles.skillsDesktop}>
+                {...skills.map((skill) => (
+                    <div key={skill.name} className={styles.skill}>
+                        <Text className={styles.skillName}>{skill.name}</Text>
+                        <Progress value={skill.value} className={styles.skillValue} />
+                    </div>
+                ))}
             </div>
             <Button appear='underline' className={styles.button} onClick={toggleExpand}>{expanded ? 'Collapse' : 'Expand'}</Button>
         </section>
