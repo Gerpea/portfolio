@@ -1,7 +1,6 @@
 .skills {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 0.75rem;
 }
 
 .skillNames {
@@ -33,7 +32,6 @@
 .button {
     margin-left: auto;
     margin-right: -0.75rem;
-    margin-top: -0.625rem;
     margin-bottom: -0.625rem;
 }
 
@@ -50,6 +48,26 @@
     display: none;
 }
 
+.skillsExpanded {
+    height: auto;
+}
+
+.skillsCollapsed {
+    position: relative;
+    overflow: hidden;
+    max-height: 110px;
+}
+
+.skillsCollapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    background: linear-gradient(0deg, var(--color-background) 0%, transparent 100%);;
+}
+
 @media screen and (min-width: 870px) {
     .main {
         padding-top: 127px;
@@ -62,8 +80,9 @@
 
     .skillsDesktop {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
-        row-gap: 0.5rem;
+        row-gap: 1rem;
     }
 
     .skill {
@@ -73,7 +92,7 @@
 
     .skillName {
         padding-right: 0.5rem;
-        width: 40%;
+        width: 50%;
     }
 
     .skillValue {

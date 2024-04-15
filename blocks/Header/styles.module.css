@@ -8,18 +8,18 @@
     align-items: center;
 }
 
-.iconLink {
+.buttons > .iconLink {
     padding: 0.625rem 0.75rem;
     color: var(--color-main);
     text-decoration: none;
     vertical-align: middle;
 }
 
-.iconLink:visited {
+.buttons > .iconLink:visited {
     color: var(--color-main);
 }
 
-.contactLink {
+.buttons > .contactLink {
     display: flex;
     align-items: center;
     justify-content: center;

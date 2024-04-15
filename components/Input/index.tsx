@@ -12,4 +12,6 @@ const Input: React.FC<Props> = React.forwardRef<HTMLInputElement, Props>(({ name
     )
 })
 
+Input.displayName = 'Input'
+
 export default Input

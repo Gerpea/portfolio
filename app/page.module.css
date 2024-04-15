@@ -24,6 +24,10 @@
   padding-top: 1.5rem;
 }
 
+.about {
+  padding-top: 1.5rem;
+}
+
 @media screen and (min-width: 570px) {
   .main {
     max-width: 570px;
@@ -50,6 +54,10 @@
   }
 
   .contacts {
+    padding-top: 3rem;
+  }
+
+  .about {
     padding-top: 3rem;
   }
 }
