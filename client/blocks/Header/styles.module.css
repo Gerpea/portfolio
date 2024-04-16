@@ -33,15 +33,15 @@
     background: var(--color-main);
 }
 
-.iconLink:hover {
-    color: var(--color-success) !important;
+.iconLink:hover svg {
+    color: var(--color-success);
 }
 
-.contactLink:visited {
+.contactLink:visited span {
     color: var(--color-background);
 }
 
-.contactLink:hover {
+.contactLink:hover span {
     color: var(--color-success);
 }
 

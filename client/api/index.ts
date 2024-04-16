@@ -43,7 +43,16 @@ export async function getWorks(): Promise<Work[]> {
     })))
 }
 
-
 export async function getAbout(): Promise<About> {
     return baseFetch<About>('about')
+}
+
+export async function sendEmail(contact: string, message: string) {
+    return fetch('/api/mail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ contact, message })
+    }).then(response => response.json()).then(data => data)
 }

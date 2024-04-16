@@ -39,8 +39,10 @@
 }
 
 .button {
-    margin-right: -0.75rem;
     margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
 }
 
 @media screen and (min-width: 870px) {

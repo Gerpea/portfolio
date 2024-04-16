@@ -7,8 +7,6 @@ import Contact from "@/blocks/Contact";
 import Logo from "@/components/Logo";
 import styles from "./page.module.css";
 
-// strapi token 
-// 
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -17,7 +15,7 @@ export default function Home() {
       <Projects className={styles.projects}/>
       <Experience className={styles.experiences} />
       <About className={styles.about} />
-      <Contact id='contact' className={styles.contacts}/>
+      <Contact className={styles.contacts}/>
       <Logo style={{ paddingTop: '3rem' }} className={styles.logo} />
     </main>
   );

@@ -1,7 +1,19 @@
 .header {
     padding-bottom: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.period + .period {
+.period+.period {
     padding-top: 1rem;
+}
+
+.totalYears {
+    color: var(--color-secondary)
+}
+
+.yearsNumber {
+    font-family: var(--font-date);
+    font-size: 0.8rem;
 }
