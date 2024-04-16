@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import DateText from '@/components/DateText'
 import Header from '@/components/Header'
 import Text from '@/components/Text'
@@ -17,6 +17,9 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 
 const Period: React.FC<Props> = ({ name, description, from, to, className, ...rest }) => {
     const [expanded, toggleExpand] = useToggle(false);
+    const [hover, setHover] = useState(false);
+    const handleHover = useCallback(() => setHover(true), [])
+    const handleUnHover = useCallback(() => setHover(false), [])
 
     return (
         <div className={`${styles.container} ${className}`} {...rest}>
@@ -24,8 +27,8 @@ const Period: React.FC<Props> = ({ name, description, from, to, className, ...re
                 <Header level='3'>{name}</Header>
                 <DateText from={from} to={to} />
             </div>
-            <Text className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed}`}>{description}</Text>
-            <Button appear='underline' className={styles.button} onClick={toggleExpand}>{expanded ? 'Collapse' : 'Expand'}</Button>
+            <Text className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}>{description}</Text>
+            <Button appear='underline' className={styles.button} onClick={toggleExpand} onMouseEnter={handleHover} onMouseLeave={handleUnHover}>{expanded ? 'Collapse' : 'Expand'}</Button>
         </div>
     )
 }

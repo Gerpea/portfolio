@@ -30,8 +30,11 @@
     left: 0;
     height: 200%;
     width: 100%;
-    background: linear-gradient(0deg, var(--color-background) 0%, transparent 50%);
-    ;
+    background: linear-gradient(0deg, var(--color-background) 0%, transparent 30%);
+}
+
+.textPreExpand::after {
+    background: linear-gradient(0deg, var(--color-background) 0%, transparent 10%);
 }
 
 .textExpanded {
