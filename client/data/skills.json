@@ -1,0 +1,58 @@
+[
+    {
+        "name": "ReactJS",
+        "value": 100
+    },
+    {
+        "name": "JS",
+        "value": 85
+    },
+    {
+        "name": "NextJS",
+        "value": 100
+    },
+    {
+        "name": "TS",
+        "value": 95
+    },
+    {
+        "name": "RESTAPI",
+        "value": 80
+    },
+    {
+        "name": "HTML",
+        "value": 75
+    },
+    {
+        "name": "CSS",
+        "value": 85
+    },
+    {
+        "name": "Git",
+        "value": 60
+    },
+    {
+        "name": "Patterns",
+        "value": 70
+    },
+    {
+        "name": "OOP",
+        "value": 75
+    },
+    {
+        "name": "Assembly",
+        "value": 25
+    },
+    {
+        "name": "C#",
+        "value": 30
+    },
+    {
+        "name": "C",
+        "value": 40
+    },
+    {
+        "name": "UI/UX",
+        "value": 45
+    }
+]
