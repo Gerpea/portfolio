@@ -7,6 +7,7 @@ import Text from '@/components/Text'
 import useToggle from '@/hooks/useToggle'
 import Button from '@/components/Button';
 import styles from './styles.module.css'
+import Markdown from 'react-markdown';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
     name: string;
@@ -27,7 +28,9 @@ const Period: React.FC<Props> = ({ name, description, from, to, className, ...re
                 <Header level='3'>{name}</Header>
                 <DateText from={from} to={to} />
             </div>
-            <Text className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}>{description}</Text>
+            <Markdown className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}>
+                {description}
+            </Markdown>
             <Button appear='underline' className={styles.button} onClick={toggleExpand} onMouseEnter={handleHover} onMouseLeave={handleUnHover}>{expanded ? 'Collapse' : 'Expand'}</Button>
         </div>
     )

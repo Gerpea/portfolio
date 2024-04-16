@@ -7,6 +7,7 @@ import Link from '@/components/Link'
 import Text from '@/components/Text'
 import useToggle from '@/hooks/useToggle'
 import styles from './styles.module.css'
+import Markdown from 'react-markdown';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
     name: string;
@@ -20,11 +21,13 @@ const Project: React.FC<Props> = ({ name, description, demoURL, codeURL, ...rest
     const [hover, setHover] = useState(false);
     const handleHover = useCallback(() => setHover(true), [])
     const handleUnHover = useCallback(() => setHover(false), [])
-    
+
     return (
         <div {...rest}>
             <Header level='3' className={styles.header}>{name}</Header>
-            <Text className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}>{description}</Text>
+            <Markdown className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}>
+                {description}
+            </Markdown>
             <div className={styles.footer}>
                 {demoURL && <Link href={demoURL}>Demo</Link>}
                 {codeURL && <Link href={codeURL}>Code</Link>}
