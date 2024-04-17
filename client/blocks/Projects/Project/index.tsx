@@ -7,6 +7,7 @@ import Header from '@/components/Header'
 import Link from '@/components/Link'
 import useToggle from '@/hooks/useToggle'
 import styles from './styles.module.css'
+import Image from 'next/image';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
     name: string;
@@ -26,7 +27,15 @@ const Project: React.FC<Props> = ({ name, description, demoURL, codeURL, collaps
     return (
         <div {...rest}>
             <Header level='3' className={styles.header}>{name}</Header>
-            <Markdown className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}>
+            <Markdown
+                className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}
+                components={{
+                    img(props) {
+                        // @ts-ignore
+                        return <Image {...props} width={570} height={570} />
+                    }
+                }}
+            >
                 {description}
             </Markdown>
             <div className={styles.footer}>
@@ -34,7 +43,7 @@ const Project: React.FC<Props> = ({ name, description, demoURL, codeURL, collaps
                 {codeURL && <Link href={codeURL}>Code</Link>}
                 <Button appear='underline' className={styles.button} onClick={toggleExpand} onMouseEnter={handleHover} onMouseLeave={handleUnHover}>{expanded ? collapse_btn : expand_btn}</Button>
             </div>
-        </div>
+        </div >
     )
 }
 

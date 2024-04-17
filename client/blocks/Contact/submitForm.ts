@@ -1,3 +1,5 @@
+'use server';
+
 import nodemailer from "nodemailer"
 import sanitizeHtml from 'sanitize-html';
 
@@ -12,7 +14,7 @@ const smtpOptions = {
     },
 }
 
-export const sendEmail = async (html: string) => {
+const sendEmail = async (html: string) => {
     const transporter = nodemailer.createTransport({
         ...smtpOptions,
     })
@@ -25,8 +27,10 @@ export const sendEmail = async (html: string) => {
     })
 }
 
-export async function POST(request: Request) {
-    const body = await request.json()
-    await sendEmail(`<h2>Contact: ${sanitizeHtml(body.contact)}</h2><h2>Message: ${sanitizeHtml(body.message)}</h2>`)
-    return Response.json({ 'ok': 'ok' })
+export default async function sumbitForm(formData: FormData) {
+    const body = {
+        contact: formData.get('contact') as string,
+        message: formData.get('message') as string,
+    }
+    sendEmail(`<h2>Contact: ${sanitizeHtml(body.contact)}</h2><h2>Message: ${sanitizeHtml(body.message)}</h2>`)
 }

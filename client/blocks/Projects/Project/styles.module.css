@@ -30,6 +30,8 @@
     margin: 0 auto;
     padding: 1rem;
     max-width: 100%;
+    width: auto;
+    height: auto;
 }
 
 .text ul {

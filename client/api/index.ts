@@ -9,7 +9,7 @@ async function baseFetch<T>(endpoint: string): Promise<T> {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${TOKEN}`
-        },
+        }
     })
         .then(response => response.json())
         .then(data => {
