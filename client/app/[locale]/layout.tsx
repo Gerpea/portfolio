@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Ubuntu_Mono, Gugi } from "next/font/google";
+import { Ubuntu_Mono,  Ubuntu, Gugi } from "next/font/google";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "@/i18n";
 import "./globals.css";
@@ -8,6 +8,13 @@ const ubuntuMono = Ubuntu_Mono({
   subsets: ["latin", "cyrillic"],
   weight: ['400', '700'],
   variable: '--font-main',
+  display: 'swap'
+});
+
+const ubuntu = Ubuntu({
+  subsets: ["latin", "cyrillic"],
+  weight: ['400', '700'],
+  variable: '--font-name',
   display: 'swap'
 });
 
@@ -40,7 +47,7 @@ export default function RootLayout({
   unstable_setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${ubuntuMono.variable} ${gugi.variable}`}>
+    <html lang={locale} className={`${ubuntuMono.variable} ${ubuntu.variable} ${gugi.variable}`}>
       <body>{children}</body>
     </html>
   );

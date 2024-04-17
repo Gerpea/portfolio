@@ -19,7 +19,7 @@ const Header: React.FC<React.HTMLProps<HTMLElement>> = async ({ className, ...re
                     <Link href='https://github.com/Gerpea' target='_blank' className={styles.iconLink}><Icon name="github" /></Link>
                     <Link href='#contact' className={styles.contactLink}><span>{t('contact')}</span></Link>
                 </div>
-                <TextHeader level="1" className={styles.title}>German Tsyganov</TextHeader>
+                <TextHeader level="1" className={styles.title}>{t('full_name')}</TextHeader>
             </div>
         </header>
     )

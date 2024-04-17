@@ -51,6 +51,9 @@
 
 .title {
     padding-top: 0.75rem;
+    font-family: var(--font-name);
+    font-size: 1.75rem;
+    white-space: nowrap;
 }
 
 @media screen and (min-width: 570px) {
