@@ -1,7 +1,7 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
 import { Ubuntu_Mono, Gugi } from "next/font/google";
-import '../app/globals.css'
+import '../app/[locale]/globals.css'
 
 const ubuntuMono = Ubuntu_Mono({
   subsets: ["latin", "cyrillic"],

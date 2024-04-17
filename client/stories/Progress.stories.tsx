@@ -20,6 +20,11 @@ const meta = {
         type: 'number',
       },
     },
+    text: {
+      control: {
+        type: 'string',
+      },
+    },
   },
 } satisfies Meta<typeof Progress>;
 
@@ -29,17 +34,20 @@ type Story = StoryObj<typeof meta>;
 export const Empty: Story = {
   args: {
     value: 0,
+    text: 'Progress'
   },
 };
 
 export const Half: Story = {
   args: {
     value: 50,
+    text: 'Progress'
   },
 };
 
 export const Full: Story = {
   args: {
     value: 100,
+    text: 'Progress'
   },
 };

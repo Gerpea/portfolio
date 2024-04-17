@@ -28,7 +28,7 @@ async function baseFetch<T>(endpoint: string): Promise<T> {
 }
 
 export async function getSkills(): Promise<Skill[]> {
-    return baseFetch<Skill[]>('skills')
+    return baseFetch<Skill[]>('skills?sort=value:desc')
 }
 
 export async function getProjects({ locale }: { locale: string }): Promise<Project[]> {
@@ -36,7 +36,7 @@ export async function getProjects({ locale }: { locale: string }): Promise<Proje
 }
 
 export async function getWorks({ locale }: { locale: string }): Promise<Work[]> {
-    return baseFetch<Work[]>(`works?locale=${locale}`).then((data) => data.map((work) => ({
+    return baseFetch<Work[]>(`works?locale=${locale}&sort=from:desc`).then((data) => data.map((work) => ({
         ...work,
         from: new Date(work.from),
         to: new Date(work.to),

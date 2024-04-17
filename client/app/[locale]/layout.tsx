@@ -35,7 +35,7 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-export const revalidate = 3600
+export const revalidate = 10
 
 export default function RootLayout({
   children,

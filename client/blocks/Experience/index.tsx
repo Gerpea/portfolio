@@ -17,7 +17,7 @@ const Experience: React.FC<React.HTMLProps<HTMLElement>> = async (props) => {
     return acc + dateDiff
   }, 0);
   const totalYears = Math.floor(totalDays / 365)
-  const totalMonths = Math.floor((totalDays - (totalYears * totalDays)) / 30)
+  const totalMonths = Math.floor((totalDays - (totalYears * 365)) / 30)
 
   return (
     <section {...props}>
