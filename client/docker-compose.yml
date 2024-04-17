@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  client:
+    container_name: client
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        ENV_VARIABLE: ${ENV_VARIABLE}
+        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+        BACKEND_URL: ${BACKEND_URL}
+        BACKEND_TOKEN: ${BACKEND_TOKEN}
+        SMTP_HOST: ${SMTP_HOST}
+        SMTP_PORT: ${SMTP_PORT}
+        SMTP_USER: ${SMTP_USER}
+        SMTP_PASSWORD: ${SMTP_PASSWORD}
+        SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL}
+    environment:
+      ENV_VARIABLE: ${ENV_VARIABLE}
+      NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+      BACKEND_URL: ${BACKEND_URL}
+      BACKEND_TOKEN: ${BACKEND_TOKEN}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL}
+    env_file: .env.local
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - portfolio
+
+networks:
+  portfolio:
+    external: true
