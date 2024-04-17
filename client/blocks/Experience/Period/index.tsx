@@ -14,9 +14,11 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
     description: string;
     from: Date;
     to: Date;
+    collapse_btn: string;
+    expand_btn: string;
 }
 
-const Period: React.FC<Props> = ({ name, description, from, to, className, ...rest }) => {
+const Period: React.FC<Props> = ({ name, description, from, to, className, collapse_btn, expand_btn, ...rest }) => {
     const [expanded, toggleExpand] = useToggle(false);
     const [hover, setHover] = useState(false);
     const handleHover = useCallback(() => setHover(true), [])
@@ -31,7 +33,7 @@ const Period: React.FC<Props> = ({ name, description, from, to, className, ...re
             <Markdown className={`${styles.text} ${expanded ? styles.textExpanded : styles.textCollapsed} ${hover ? styles.textPreExpand : ''}`}>
                 {description}
             </Markdown>
-            <Button appear='underline' className={styles.button} onClick={toggleExpand} onMouseEnter={handleHover} onMouseLeave={handleUnHover}>{expanded ? 'Collapse' : 'Expand'}</Button>
+            <Button appear='underline' className={styles.button} onClick={toggleExpand} onMouseEnter={handleHover} onMouseLeave={handleUnHover}>{expanded ? collapse_btn : expand_btn}</Button>
         </div>
     )
 }

@@ -1,0 +1,16 @@
+{
+    "Main": {
+        "contact_btn": "Contact",
+        "expand_btn": "Expand",
+        "collapse_btn": "Collapse",
+        "send_btn": "Send",
+        "delivered_btn": "Delivered",
+        "reach_hint": "How do I reach you?",
+        "message_hint": "What's your point?",
+        "skills": "Skills",
+        "projects": "Projects",
+        "experience": "Work experience",
+        "about": "About",
+        "contact": "Contact"
+    }
+}

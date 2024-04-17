@@ -31,20 +31,20 @@ export async function getSkills(): Promise<Skill[]> {
     return baseFetch<Skill[]>('skills')
 }
 
-export async function getProjects(): Promise<Project[]> {
-    return baseFetch<Project[]>('projects')
+export async function getProjects({ locale }: { locale: string }): Promise<Project[]> {
+    return baseFetch<Project[]>(`projects?locale=${locale}`)
 }
 
-export async function getWorks(): Promise<Work[]> {
-    return baseFetch<Work[]>('works').then((data) => data.map((work) => ({
+export async function getWorks({ locale }: { locale: string }): Promise<Work[]> {
+    return baseFetch<Work[]>(`works?locale=${locale}`).then((data) => data.map((work) => ({
         ...work,
         from: new Date(work.from),
         to: new Date(work.to),
     })))
 }
 
-export async function getAbout(): Promise<About> {
-    return baseFetch<About>('about')
+export async function getAbout({ locale }: { locale: string }): Promise<About> {
+    return baseFetch<About>(`about?locale=${locale}`)
 }
 
 export async function sendEmail(contact: string, message: string) {

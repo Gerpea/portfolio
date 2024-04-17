@@ -14,7 +14,15 @@ type Inputs = {
     message: string
 }
 
-const Contact: React.FC<React.HTMLProps<HTMLElement>> = (props) => {
+interface Props extends React.HTMLProps<HTMLElement> {
+    send_btn: string;
+    delivered_btn: string;
+    reach_hint: string;
+    message_hint: string;
+    contact: string;
+}
+
+const Contact: React.FC<Props> = ({ send_btn, delivered_btn, reach_hint, message_hint, contact, ...rest }) => {
     const { register, handleSubmit, formState: { isSubmitSuccessful } } = useForm<Inputs>()
 
     const onSubmit: SubmitHandler<Inputs> = useCallback((data) => {
@@ -22,15 +30,15 @@ const Contact: React.FC<React.HTMLProps<HTMLElement>> = (props) => {
     }, [])
 
     return (
-        <section {...props}>
+        <section {...rest}>
             <Header level='2' className={styles.header}>
-                Contact
+                {contact}
             </Header>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Input placeholder='How do I reach you?' id='contact' disabled={isSubmitSuccessful} className={styles.email}  {...register("contact")} />
-                <TextArea placeholder="What's your point?" disabled={isSubmitSuccessful} className={styles.message} {...register("message")} />
+                <Input placeholder={reach_hint} id='contact' disabled={isSubmitSuccessful} className={styles.email}  {...register("contact")} />
+                <TextArea placeholder={message_hint} disabled={isSubmitSuccessful} className={styles.message} {...register("message")} />
                 <Button appear='fill' type='submit' disabled={isSubmitSuccessful} className={styles.button}>{
-                    isSubmitSuccessful ? 'Delivered' : 'Send'
+                    isSubmitSuccessful ? delivered_btn : send_btn
                 }</Button>
             </form>
         </section>

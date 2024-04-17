@@ -1,0 +1,16 @@
+{
+    "Main": {
+        "contact_btn": "Связь",
+        "expand_btn": "Развернуть",
+        "collapse_btn": "Свернуть",
+        "send_btn": "Отправить",
+        "delivered_btn": "Доставлено",
+        "reach_hint": "Как с вами связаться?",
+        "message_hint": "Что вы хотите сказать?",
+        "skills": "Навыки",
+        "projects": "Проекты",
+        "experience": "Опыт работы",
+        "about": "Обо мне",
+        "contact": "Связь"
+    }
+}
