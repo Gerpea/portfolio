@@ -8,5 +8,7 @@ namespace NodeJS {
         SMTP_USER: string;
         SMTP_PASSWORD: string;
         SMTP_FROM_EMAIL: string;
+        TELEGRAM_TOKEN: string;
+        TELEGRAM_CHAT_ID: string;
     }
 }

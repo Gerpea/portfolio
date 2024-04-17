@@ -6,12 +6,7 @@ import Input from '@/components/Input'
 import TextArea from '@/components/TextArea'
 import Button from '@/components/Button'
 import styles from './styles.module.css'
-import submitForm from './submitForm'
-
-type Inputs = {
-    contact: string
-    message: string
-}
+import submitForm from './submitFormTelegram'
 
 interface Props extends React.HTMLProps<HTMLElement> {
     send_btn: string;
