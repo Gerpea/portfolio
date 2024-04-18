@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from '@/components/Header'
-import Text from '@/components/Text'
 import styles from './styles.module.css'
 import { getAbout } from '@/api'
 import { getTranslations, getLocale } from 'next-intl/server'
+import Markdown from 'react-markdown'
 
 const About: React.FC<React.HTMLProps<HTMLElement>> = async (props) => {
     const t = await getTranslations('Main')
@@ -15,9 +15,9 @@ const About: React.FC<React.HTMLProps<HTMLElement>> = async (props) => {
             <Header level='2' className={styles.header}>
                 {t('about')}
             </Header>
-            <Text>
+            <Markdown>
                 {about.description}
-            </Text>
+            </Markdown>
         </section>
     )
 }

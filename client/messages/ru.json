@@ -13,5 +13,9 @@
         "about": "Обо мне",
         "contact": "Связь",
         "full_name": "Герман Цыганов"
+    },
+    "Metadata": {
+        "title": "Герман Цыганов",
+        "description": "Резюме"
     }
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Ubuntu_Mono,  Ubuntu, Gugi } from "next/font/google";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "@/i18n";
 import "./globals.css";
 
@@ -26,10 +26,14 @@ const gugi = Gugi({
 });
 
 
-export const metadata: Metadata = {
-  title: "German Tsyganov",
-  description: "Portfolio",
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string }; }) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
